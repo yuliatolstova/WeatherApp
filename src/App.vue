@@ -52,7 +52,7 @@ export default {
     weatherSearch() {
       this.loading = true;
       this.error = false;
-      fetch(`http://api.weatherapi.com/v1/current.json?key=40b888d46c0244ed93093632240812&q=${this.searchQuery}`)
+      fetch(`http://api.weatherapi.com/v1/current.json?key=${process.env.KEY}&q=${this.searchQuery}`)
           .then(response=>response.json())
           .then(data=>{
             this.loading = false;
