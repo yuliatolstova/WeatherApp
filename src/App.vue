@@ -52,7 +52,7 @@ export default {
     weatherSearch() {
       this.loading = true;
       this.error = false;
-      fetch(`https://api.weatherapi.com/v1/current.json?key=${process.env.KEY}&q=${this.searchQuery}`)
+      fetch(`http://api.weatherapi.com/v1/current.json?key=${import.meta.env.VITE_WEATHER_API_KEY}&q=${this.searchQuery}`)
           .then(response=>response.json())
           .then(data=>{
             this.loading = false;
